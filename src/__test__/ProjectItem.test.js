@@ -6,18 +6,20 @@ import user from "../data/data";
 Enzyme.configure({ adapter: new Adapter() });
 
 let wrapper;
+const { name, about, technologies } = user.projects[1];
 
 beforeEach(() => {
-  wrapper = shallow(<ProjectItem projects={user.projects} />);
+  wrapper = shallow(
+    <ProjectItem name={name} about={about} technologies={technologies} />
+  );
 });
 
-test("renders a <ProjectItem> for each project passed in as a prop", () => {
-  expect(wrapper.find(ProjectItem)).toHaveLength(user.projects.length);
+test("renders a <span> for each technology passed in as a prop", () => {
+  expect(wrapper.find("span")).toHaveLength(technologies.length);
 });
 
-test("gives each <ProjectItem> a key based on the project id", () => {
-  const items = wrapper.find(ProjectItem);
-  expect(items.at(0).key()).toEqual(user.projects[0].id);
-  expect(items.at(1).key()).toEqual(user.projects[1].id);
-  expect(items.at(2).key()).toEqual(user.projects[2].id);
+test("gives each <span> a key based on the technology name", () => {
+  const items = wrapper.find("span");
+  expect(items.at(0).key()).toBe(technologies[0]);
+  expect(items.at(1).key()).toBe(technologies[1]);
 });
