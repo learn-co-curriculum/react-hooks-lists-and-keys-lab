@@ -1,12 +1,12 @@
 import Enzyme, { shallow } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import ProjectItem from "../components/ProjectItem";
-import { projects } from "../data/user";
+import user from "../data/user";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 let wrapper;
-const { name, about, technologies } = projects[1];
+const { name, about, technologies } = user.projects[1];
 
 beforeEach(() => {
   wrapper = shallow(
