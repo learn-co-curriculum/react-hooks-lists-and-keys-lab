@@ -96,6 +96,7 @@ nav a:active {
   margin: 0.25rem;
   padding: 0.5rem;
   border-radius: 4px;
+  display: inline-block;
 }
 
 @media (min-width: 700px) {
