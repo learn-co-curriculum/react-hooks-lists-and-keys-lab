@@ -37,7 +37,9 @@ code passes the tests.
 
 ### NavBar
 
-In the `NavBar` component, there is an array with three strings representing each link on the page. For each of those strings, create an `<a>` tag that looks like this:
+In the `NavBar` component, there is an array with three strings representing
+each link on the page. For each of those strings, create an `<a>` tag that looks
+like this:
 
 ```js
 <a href="#home">Home</a>
@@ -54,8 +56,8 @@ project for the `key` prop.
 
 ### ProjectItem
 
-In the `ProjectItem` component, we should be getting a prop of `technologies`
-passed down from `ProjectList`. For each element in this array, create a `<span>`
+The `ProjectItem` component should get a prop of `technologies` passed down from
+`ProjectList`. For each element in this array of technologies, create a `<span>`
 tag that displays the name of the technology.
 
 ## Resources
