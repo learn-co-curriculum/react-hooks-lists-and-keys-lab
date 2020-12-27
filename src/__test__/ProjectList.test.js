@@ -1,24 +1,41 @@
-import Enzyme, { shallow } from "enzyme";
-import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-import ProjectItem from "../components/ProjectItem";
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
 import ProjectList from "../components/ProjectList";
-import user from "../data/user";
 
-Enzyme.configure({ adapter: new Adapter() });
+const projects = [
+  {
+    id: 1,
+    name: "Reciplease",
+    about: "A recipe tracking app",
+    technologies: ["Rails", "Bootstrap CSS"],
+  },
+  {
+    id: 2,
+    name: "Kibbles N Bitz",
+    about: "Tinder for dogs",
+    technologies: ["React", "Redux"],
+  },
+  {
+    id: 3,
+    name: "Alienwares",
+    about: "Etsy for aliens",
+    technologies: ["React", "Redux", "Rails"],
+  },
+];
 
-let wrapper;
+test("gives each <ProjectItem> a key based on the project id", () => {
+  let errorSpy = jest.spyOn(global.console, "error");
+  render(<ProjectList projects={projects} />);
 
-beforeEach(() => {
-  wrapper = shallow(<ProjectList projects={user.projects} />);
+  expect(errorSpy).not.toHaveBeenCalled();
+
+  errorSpy.mockRestore();
 });
 
 test("renders a <ProjectItem> for each project passed in as a prop", () => {
-  expect(wrapper.find(ProjectItem)).toHaveLength(user.projects.length);
-});
+  render(<ProjectList projects={projects} />);
 
-test("gives each <ProjectItem> a key based on the project id", () => {
-  const items = wrapper.find(ProjectItem);
-  expect(items.at(0).key()).toBe(user.projects[0].id.toString());
-  expect(items.at(1).key()).toBe(user.projects[1].id.toString());
-  expect(items.at(2).key()).toBe(user.projects[2].id.toString());
+  for (const project of projects) {
+    expect(screen.queryByText(project.name)).toBeInTheDocument();
+  }
 });
