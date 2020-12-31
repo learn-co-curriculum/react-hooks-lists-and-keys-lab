@@ -12,7 +12,7 @@ projects based on an array of project data.
 
 Here is an image of what we want once we are finished:
 
-![demo](images/demo.png)
+![demo](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-lists-and-keys-lab/master/images/demo.png)
 
 ...and here is a tree view of our component parent-child structure:
 
@@ -42,7 +42,7 @@ each link on the page. For each of those strings, create an `<a>` tag that looks
 like this:
 
 ```js
-<a href="#home">Home</a>
+<a href="#home">home</a>
 ```
 
 Make sure each `<a>` element also gets a unique `key` prop!
