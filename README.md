@@ -2,8 +2,8 @@
 
 ## Learning Goals
 
-- Practice writing dynamic components
-- Practice jumping into existing code and making the necessary changes
+- Transform a list of values into a list of components
+- Use the `key` prop correctly with the list of components
 
 ## Introduction
 
@@ -12,11 +12,11 @@ projects based on an array of project data.
 
 Here is an image of what we want once we are finished:
 
-![demo](https://raw.githubusercontent.com/learn-co-curriculum/react-hooks-lists-and-keys-lab/master/images/demo.png)
+![demo](https://curriculum-content.s3.amazonaws.com/phase-2/phase-2-hooks-lists-and-keys-lab/demo.png)
 
 ...and here is a tree view of our component parent-child structure:
 
-```text
+```txt
 └── App
     ├── NavBar
     ├── Home
@@ -31,9 +31,9 @@ Here is an image of what we want once we are finished:
 ## Deliverables
 
 It's recommended that you run `npm start` and work on this in the browser
-**before** running tests - try to get your app to match the demo! Once you've
-built out the components below, run `npm test` or `learn test` to see if your
-code passes the tests.
+**before** running tests &mdash; try to get your app to match the demo! Once
+you've built out the components below, run `npm test` or `learn test` to see if
+your code passes the tests.
 
 ### NavBar
 
@@ -45,7 +45,7 @@ like this:
 <a href="#home">home</a>
 ```
 
-Make sure each `<a>` element also gets a unique `key` prop!
+Make sure each `<a>` element also gets a unique `key` prop.
 
 ### ProjectList
 
