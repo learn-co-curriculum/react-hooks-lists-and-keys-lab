@@ -41,7 +41,7 @@ In the `NavBar` component, there is an array with three strings representing
 each link on the page. For each of those strings, create an `<a>` tag that looks
 like this:
 
-```js
+```jsx
 <a href="#home">home</a>
 ```
 
