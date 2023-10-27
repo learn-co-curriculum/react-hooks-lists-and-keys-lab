@@ -30,3 +30,5 @@ test("each <a> element has the correct href attribute", () => {
   expect(screen.queryByText(/about/i).href).toContain("#about");
   expect(screen.queryByText(/projects/i).href).toContain("#projects");
 });
+
+
