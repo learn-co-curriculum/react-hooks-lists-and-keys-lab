@@ -7,7 +7,8 @@ const user = {
     github: "https://github.com/liza",
     linkedin: "https://www.linkedin.com/in/liza/",
   },
-  projects: [
+  projects: 
+  [
     {
       id: 1,
       name: "Reciplease",
@@ -26,6 +27,13 @@ const user = {
       about: "Etsy for aliens",
       technologies: ["React", "Redux", "Rails"],
     },
+    {
+      id: 4,
+      name: "jgfjhvjh",
+      about: "Etsy for aliens",
+      technologies: ["React", "Redux", "Rails"],
+    },
+    
   ],
 };
 
