@@ -1,9 +1,15 @@
 import React from "react";
 
+const displayLinks = (links) => {
+  return links.map(link => <a href={"#" + link} key={Math.random()}>{link}</a>)
+}
+
 function NavBar() {
   const links = ["home", "about", "projects"];
 
-  return <nav>{/* display an <a> tag for each link here */}</nav>;
+  return (<nav>
+    {displayLinks(links)}
+  </nav>);
 }
 
 export default NavBar;
