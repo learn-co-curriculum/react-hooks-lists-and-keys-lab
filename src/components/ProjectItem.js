@@ -3,7 +3,6 @@ import ProjectList from "./ProjectList";
 
 function ProjectItem({ name, about, technologies }) {
   const techItem = technologies?.map((item) => { 
-    // console.log(techItem, "WHAT ARE WE GETTING BACK")
     return <span key={item}>{item}</span>
   });
 
